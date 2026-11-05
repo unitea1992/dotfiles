@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# dotfiles の物を、決まった場所へリンクする。前にあった物は <名前>.before-dotfiles に残す。
+# dotfiles のファイルを、決まった場所へリンクする。前にあったファイルは <名前>.before-dotfiles に残す。
 # 使い方：~/projects/dotfiles/install    （--dry-run で、するだけを表示）
 set -euo pipefail
 here="$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd -P)"
@@ -21,7 +21,7 @@ link mise/config.toml       "$HOME/.config/mise/config.toml"
 link claude/rules/upstream-issues.md "$HOME/.claude/rules/upstream-issues.md"
 
 cat <<MSG
-残りは手で（機械ごとの物のため）：
+残りは手で（マシンごとのファイルのため）：
   ~/.bashrc の最後に   . $here/bash/common.sh
   ~/.gitconfig に      [include] path = $here/git/config   （名前とメールは ~/.gitconfig に残す）
 MSG

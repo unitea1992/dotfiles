@@ -1,7 +1,7 @@
 # shellcheck shell=bash
-# bash の共通の設定。~/.bashrc の最後に次の1行を足して読む（~/.bashrc 自体は機械ごとの物のまま）。
+# bash の共通の設定。~/.bashrc の最後に次の1行を足して読む（~/.bashrc 自体はマシンごとのファイルのまま）。
 #   . ~/projects/dotfiles/bash/common.sh
-# 入っていない道具の行は飛ばす。
+# 入っていないツールの行は飛ばす。
 
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -13,7 +13,7 @@ command -v starship >/dev/null && eval "$(starship init bash)"
 [ -r "$HOME/.atuin/bin/env" ] && . "$HOME/.atuin/bin/env"
 command -v atuin >/dev/null && eval "$(atuin init bash)"
 
-# 言語の版（mise）。切り替えるまでは、MISE_ACTIVATE=1 のときだけ効かせる。
+# 言語のバージョン（mise）。切り替えるまでは、MISE_ACTIVATE=1 のときだけ効かせる。
 if [ "${MISE_ACTIVATE:-0}" = 1 ] && command -v mise >/dev/null; then
   eval "$(mise activate bash)"
 fi
@@ -39,7 +39,7 @@ fi
 command -v bat >/dev/null && alias cat='bat --paging=never'
 alias grep='grep --color=auto'
 
-# Tabby に今の場所を知らせる
+# Tabby に今の場所を通知する
 __tabby_cwd_report() { printf '\033]1337;CurrentDir=%s\007' "$PWD"; }
 case ";${PROMPT_COMMAND:-};" in
   *";__tabby_cwd_report;"*) ;;

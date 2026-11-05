@@ -1,10 +1,10 @@
 # 入れている外のスキル
 
-中身はここに写さない（作った人の配布物のため）。新しい機械では、それぞれの配布元の手順で `~/.agents/skills/` に入れる。
+中身はここにコピーしない（作った人の配布物のため）。新しいマシンでは、それぞれの配布元の手順で `~/.agents/skills/` に入れる。
 
 | スキル | 配布元 | メモ |
 | --- | --- | --- |
-| imozuru | https://github.com/MaryCache/imozuru | 調べ物を原文で集める |
+| imozuru | https://github.com/MaryCache/imozuru | 調査の原文を集める |
 | yomiyasu | https://github.com/nanaism/yomiyasu | 日本語の推敲 |
 | stack-diagram | https://github.com/caru-ini/stack-diagram | 構成図 |
 | security-audit | https://github.com/cloudflare/security-audit-skill | セキュリティの見直し |
