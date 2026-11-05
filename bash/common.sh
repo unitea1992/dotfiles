@@ -13,8 +13,9 @@ command -v starship >/dev/null && eval "$(starship init bash)"
 [ -r "$HOME/.atuin/bin/env" ] && . "$HOME/.atuin/bin/env"
 command -v atuin >/dev/null && eval "$(atuin init bash)"
 
-# 言語のバージョン（mise）。切り替えるまでは、MISE_ACTIVATE=1 のときだけ効かせる。
-if [ "${MISE_ACTIVATE:-0}" = 1 ] && command -v mise >/dev/null; then
+# 言語のバージョン（mise）。手で開くシェルでは既定で効かせる。止めるときは MISE_ACTIVATE=0。
+# 常駐の仕組み（systemd）はシェルを通らないので、ここでは変わらない。
+if [ "${MISE_ACTIVATE:-1}" = 1 ] && command -v mise >/dev/null; then
   eval "$(mise activate bash)"
 fi
 
