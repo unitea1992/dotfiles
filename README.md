@@ -10,7 +10,7 @@
 | `starship/starship.toml` | プロンプトの見た目 | `~/.config/starship.toml` |
 | `mise/config.toml` | 言語のバージョン（node・Python・Go。Rust は rustup） | `~/.config/mise/config.toml` |
 | `claude/rules/upstream-issues.md` | Claude Code に渡す決まり：外のリポジトリへの Issue・PR の出し方 | `~/.claude/rules/` に置く |
-| `skills.md` | 入れている外のスキルと配布元（中身は写さない） | — |
+| `skills.md` | 入れている外のスキルと配布元（中身はコピーしない） | — |
 
 ## 入れ方
 
