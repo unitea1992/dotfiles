@@ -22,4 +22,4 @@ git clone https://github.com/unitea1992/dotfiles ~/projects/dotfiles
 
 `install` はリンクを張るだけ。前にあった物は `<名前>.before-dotfiles` に残す。`~/.bashrc` と `~/.gitconfig` はマシンごとのファイルなので、最後に表示される1行ずつを手で足す。
 
-mise はリンクを張ったあと `mise install` で各バージョンを入れる。ふだん使いにするまでは `MISE_ACTIVATE=1` のときだけ効く（`bash/common.sh`）。
+mise はリンクを張ったあと `mise install` で各バージョンを入れる。手で開くシェルでは既定で効く。止めるときは `MISE_ACTIVATE=0`（`bash/common.sh`）。常駐の仕組み（systemd）には効かない。
