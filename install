@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# dotfiles の物を、決まった場所へリンクする。前にあった物は <名前>.before-dotfiles に残す。
+# 使い方：~/projects/dotfiles/install    （--dry-run で、するだけを表示）
+set -euo pipefail
+here="$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd -P)"
+dry=0; [ "${1:-}" = --dry-run ] && dry=1
+
+link() {
+  local src="$here/$1" dst="$2"
+  if [ "$(readlink -f -- "$dst" 2>/dev/null)" = "$src" ]; then echo "済み  $dst"; return; fi
+  if [ "$dry" = 1 ]; then echo "張る  $dst -> $src"; return; fi
+  mkdir -p -- "$(dirname -- "$dst")"
+  if [ -e "$dst" ] || [ -L "$dst" ]; then mv -- "$dst" "$dst.before-dotfiles"; fi
+  ln -s -- "$src" "$dst"
+  echo "張った $dst -> $src"
+}
+
+link starship/starship.toml "$HOME/.config/starship.toml"
+link git/hooks/pre-commit   "$HOME/.config/git/hooks/pre-commit"
+link mise/config.toml       "$HOME/.config/mise/config.toml"
+link claude/rules/upstream-issues.md "$HOME/.claude/rules/upstream-issues.md"
+
+cat <<MSG
+残りは手で（機械ごとの物のため）：
+  ~/.bashrc の最後に   . $here/bash/common.sh
+  ~/.gitconfig に      [include] path = $here/git/config   （名前とメールは ~/.gitconfig に残す）
+MSG

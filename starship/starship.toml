@@ -1,0 +1,95 @@
+"$schema" = "https://starship.rs/config-schema.json"
+
+scan_timeout = 10
+command_timeout = 800
+add_newline = true
+
+format = """
+[](cyan)\
+$directory\
+[](bg:purple fg:cyan)\
+$git_branch\
+$git_status\
+[](bg:green fg:purple)\
+$nodejs\
+$python\
+$rust\
+[](fg:green)\
+$fill\
+$cmd_duration\
+$status\
+$time\
+$line_break\
+$character"""
+
+[fill]
+symbol = " "
+
+[directory]
+style = "bg:cyan fg:black bold"
+truncation_length = 3
+truncation_symbol = "…/"
+read_only = " 󰌾"
+format = "[  $path$read_only ]($style)"
+
+[git_branch]
+symbol = " "
+style = "bg:purple fg:white bold"
+format = "[ $symbol$branch ]($style)"
+
+[git_status]
+style = "bg:purple fg:yellow bold"
+format = "[$all_status$ahead_behind ]($style)"
+conflicted = "!"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "?${count}"
+modified = "~${count}"
+staged = "+${count}"
+renamed = "»${count}"
+deleted = "✘${count}"
+stashed = "≡"
+
+[nodejs]
+symbol = " "
+style = "bg:green fg:black bold"
+format = "[ $symbol$version ]($style)"
+detect_files = ["package.json", ".node-version", ".nvmrc"]
+detect_folders = ["node_modules"]
+
+[python]
+symbol = " "
+style = "bg:green fg:black bold"
+format = "[ $symbol$version( $virtualenv) ]($style)"
+detect_files = ["pyproject.toml", "requirements.txt", ".python-version", "uv.lock"]
+detect_folders = [".venv"]
+
+[rust]
+symbol = " "
+style = "bg:green fg:black bold"
+format = "[ $symbol$version ]($style)"
+detect_files = ["Cargo.toml"]
+
+[cmd_duration]
+min_time = 1000
+style = "bold yellow"
+format = "[$duration ✨ ]($style)"
+
+[status]
+disabled = false
+symbol = "❮"
+success_symbol = ""
+format = "[$symbol ](dimmed white)"
+style = "bold red"
+
+[time]
+disabled = false
+time_format = "%H:%M"
+style = "dimmed white"
+format = "[󰛐 $time]($style)"
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold green)"

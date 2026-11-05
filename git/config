@@ -1,0 +1,23 @@
+# Git の共通の設定。~/.gitconfig から読む（名前とメールは ~/.gitconfig に置き、ここには書かない）。
+#   [include]
+#       path = ~/projects/dotfiles/git/config
+[credential "https://github.com"]
+	helper =
+	helper = !gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !gh auth git-credential
+[push]
+	default = current
+	autoSetupRemote = true
+[pull]
+	ff = only
+[fetch]
+	prune = true
+[init]
+	defaultBranch = main
+[rerere]
+	enabled = true
+[core]
+	# 全リポジトリでコミットの前に betterleaks で秘密の混入を見る（hooks/pre-commit）
+	hooksPath = ~/.config/git/hooks

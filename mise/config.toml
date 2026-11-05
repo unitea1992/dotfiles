@@ -1,0 +1,6 @@
+# 開発機の言語の版。~/.config/mise/config.toml へリンクして使う。
+# Rust は rustup が管理するのでここに書かない（mise の rust も rustup を使い、二重になる）。
+[tools]
+node = "24.22.0"
+python = "3.14.4"
+go = "1.27.1"

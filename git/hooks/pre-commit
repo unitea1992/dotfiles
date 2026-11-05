@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+# グローバル pre-commit: staged 変更を betterleaks で検査する。
+# 有効化: git config --global core.hooksPath ~/.config/git/hooks
+set -euo pipefail
+
+BL="${BETTERLEAKS_BIN:-$HOME/go/bin/betterleaks}"
+root="$(git rev-parse --show-toplevel)"
+
+if [ ! -x "$BL" ]; then
+  echo "betterleaks が見つかりません($BL)。コミットを停止します。" >&2
+  exit 1
+fi
+
+# v2: staged patch is passed through stdin. No remote validation is requested.
+config=()
+if [ -f "$root/.betterleaks.toml" ]; then
+  config=(--config "$root/.betterleaks.toml")
+elif [ -f "$HOME/.config/betterleaks/global.toml" ]; then
+  config=(--config "$HOME/.config/betterleaks/global.toml")
+fi
+
+if ! git diff --cached --no-ext-diff --no-textconv --no-color \
+  --src-prefix=a/ --dst-prefix=b/ | "$BL" stdin --git-diff --redact "${config[@]}"; then
+  echo "betterleaks: 検出または実行エラーのためコミットを停止しました。" >&2
+  exit 1
+fi
+
+# core.hooksPath を設定すると各リポジトリの .git/hooks が読まれなくなるため、素の個別hookを引き継ぐ
+local_hook="$(git rev-parse --git-common-dir)/hooks/pre-commit"
+self="$(readlink -f "${BASH_SOURCE[0]}")"
+if [ -x "$local_hook" ] && [ "$(readlink -f "$local_hook")" != "$self" ] \
+   && [ -z "${GLOBAL_PRECOMMIT_CHAINED:-}" ]; then
+  GLOBAL_PRECOMMIT_CHAINED=1 exec "$local_hook" "$@"
+fi
