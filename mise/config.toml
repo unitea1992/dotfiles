@@ -4,3 +4,5 @@
 node = "24.22.0"
 python = "3.14.4"
 go = "1.27.1"
+# alinavigator の packageManager と同じ。常駐の仕組みが mise の shims から使う。
+pnpm = "11.25.0"
