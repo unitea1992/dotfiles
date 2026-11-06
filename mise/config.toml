@@ -17,3 +17,23 @@ taplo = "0.10.0"
 shfmt = "3.14.1"
 actionlint = "1.7.12"
 topgrade = "17.15.0"
+uv = "0.13.7"
+ruff = "0.17.3"
+ty = "0.0.97"
+yt-dlp = "2026.10.26"
+rumdl = "0.3.2"
+restic = "0.19.1"
+cargo-binstall = "1.26.2"
+tauri-cli = "2.12.4"
+ast-grep = "0.51.1"
+gup = "1.10.3"
+# コミット前のフック（git/hooks/pre-commit）が使う。v2 系の試験版を含めて、v2 系の最新を追う。
+betterleaks = { version = "2", prerelease = true }
+
+# Python の CLI。mise の pipx の入れ方は、uv があれば uv で入れる。
+"pipx:trafilatura" = "2.3.1"
+"pipx:fonttools" = "4.68.0"
+"pipx:androguard" = "4.1.4"
+"pipx:websockify" = "0.13.0"
+"pipx:gallery-dl" = "1.32.19"
+"pipx:git-filter-repo" = "2.47.0"
