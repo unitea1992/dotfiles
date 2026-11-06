@@ -1,15 +1,15 @@
 # ツールの入れ方の一覧
 
-言語と、配布元の公式のバイナリを引けるツールは mise（`mise/config.toml`）。それ以外は、それぞれの公式の入れ方のまま、ここに一覧だけ書く。
+言語とツールは、できるだけ mise（`mise/config.toml`）にまとめる。新しいマシンでは `mise install` の1回でそろう。それ以外は、それぞれの公式の入れ方のまま、ここに一覧だけ書く。
 
 | 入れ方 | ツール | メモ |
 | --- | --- | --- |
-| mise | node・python・go・pnpm、just・hyperfine・oha・onefetch・oxipng・taplo・shfmt・actionlint・topgrade | `mise install`。バージョンは `mise/config.toml` |
+| mise（配布元のバイナリ） | node・python・go・pnpm・uv、just・hyperfine・oha・onefetch・oxipng・taplo・shfmt・actionlint・topgrade・ruff・ty・yt-dlp・rumdl・restic・cargo-binstall・tauri-cli・ast-grep・gup・betterleaks | betterleaks は `version = "2"`・`prerelease = true` で、v2 系の最新（試験版を含む）を追う |
+| mise（`pipx:`、中身は uv） | trafilatura・fonttools・androguard・websockify・gallery-dl・git-filter-repo | |
 | rustup | Rust | mise の rust も rustup を使うので、rustup のまま |
-| uv の公式の入れ方 | uv、uv で入れたツール（ruff・ty・yt-dlp・gallery-dl・git-filter-repo・rumdl・trafilatura・fonttools・androguard・websockify） | `uv tool install <名前>` |
-| cargo | cargo-binstall・cargo-nextest・cargo-update・tauri-cli | mise の一覧に無い・cargo の補助 |
-| go install | betterleaks（コミット前のフックが `~/go/bin/betterleaks` を使う）・gup・httpx・katana・gau・webanalyze | mise の一覧に無い・フックが場所を決め打ち |
+| cargo | cargo-nextest・cargo-update | mise の一覧に無い |
+| go install | httpx・katana・gau・webanalyze | mise の一覧に無い。更新は gup |
 | npm（node の全体） | DSH・dsh-TUI・clasp・Playwright の CLI・言語サーバーなど | node を mise に移す3段目で入れ直す |
-| 手置き（`~/.local/bin`） | restic（バックアップが使う）・ax・deja・pi・dws・ryzenadj | 自作・専用・場所を決め打ちの物 |
+| 手置き（`~/.local/bin`） | ax・deja・pi・dws・ryzenadj | 自作・専用の物 |
 | gh の拡張 | actions-lock・poi・secure・workflow-stats | `gh extension install` |
-| apt | マシンごとの物（docker・tailscale・カーネルなど） | dotfiles には入れない |
+| apt | gh、マシンごとの物（docker・tailscale・カーネルなど） | gh は apt の自動更新に任せる |

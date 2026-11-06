@@ -3,7 +3,7 @@
 # 有効化: git config --global core.hooksPath ~/.config/git/hooks
 set -euo pipefail
 
-BL="${BETTERLEAKS_BIN:-$HOME/go/bin/betterleaks}"
+BL="${BETTERLEAKS_BIN:-$HOME/.local/share/mise/shims/betterleaks}"
 root="$(git rev-parse --show-toplevel)"
 
 if [ ! -x "$BL" ]; then
