@@ -11,6 +11,7 @@
 | `mise/config.toml` | 言語のバージョン（node・Python・Go。Rust は rustup） | `~/.config/mise/config.toml` |
 | `claude/rules/upstream-issues.md` | Claude Code に渡す決まり：外のリポジトリへの Issue・PR の出し方 | `~/.claude/rules/` に置く |
 | `skills.md` | 入れている外のスキルと配布元（中身はコピーしない） | — |
+| `tools.md` | ツールの入れ方の一覧（mise・uv・cargo・go・npm・手置き） | — |
 
 ## 入れ方
 
