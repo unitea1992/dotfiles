@@ -6,3 +6,14 @@ python = "3.14.4"
 go = "1.27.1"
 # alinavigator の packageManager と同じ。常駐の仕組みが mise の shims から使う。
 pnpm = "11.25.0"
+
+# 配布元の公式のバイナリを mise で入れるツール（2026-11-06、元は cargo・go install・手置き）。
+just = "1.59.0"
+hyperfine = "2.0.0"
+oha = "1.16.0"
+onefetch = "3.2.0"
+oxipng = "10.2.1"
+taplo = "0.10.0"
+shfmt = "3.14.1"
+actionlint = "1.7.12"
+topgrade = "17.15.0"
