@@ -1,9 +1,10 @@
 # 開発機の言語のバージョン。~/.config/mise/config.toml へリンクして使う。
-# Rust は rustup が管理するのでここに書かない（mise の rust も rustup を使い、二重になる）。
 [tools]
 node = "24.22.0"
 python = "3.14.10"
 go = "1.27.3"
+# mise は既存の rustup / Cargo home を共有する。Rust のCLIやクロスターゲットは維持される。
+rust = { version = "stable", components = ["rust-analyzer", "rust-src"] }
 # alinavigator の packageManager と同じ。常駐の仕組みが mise の shims から使う。
 pnpm = "11.25.0"
 
@@ -37,3 +38,8 @@ betterleaks = { version = "2", prerelease = true }
 "pipx:websockify" = "0.13.0"
 "pipx:gallery-dl" = "1.32.19"
 "pipx:git-filter-repo" = "2.47.0"
+
+# プロジェクトに rust-toolchain.toml があればその指定を尊重する。
+# プロジェクト側で同設定を指定する場合も rust をリストに含めること。
+[settings]
+idiomatic_version_file_enable_tools = ["rust"]
