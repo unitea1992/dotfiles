@@ -17,6 +17,7 @@ link() {
 
 link starship/starship.toml "$HOME/.config/starship.toml"
 link git/hooks/pre-commit   "$HOME/.config/git/hooks/pre-commit"
+link git/ignore             "$HOME/.config/git/ignore"
 link mise/config.toml       "$HOME/.config/mise/config.toml"
 link claude/rules/upstream-issues.md "$HOME/.claude/rules/upstream-issues.md"
 
