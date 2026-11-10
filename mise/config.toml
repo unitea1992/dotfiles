@@ -40,5 +40,6 @@ betterleaks = { version = "2", prerelease = true }
 "pipx:git-filter-repo" = "2.47.0"
 
 # プロジェクトに rust-toolchain.toml があればその指定を尊重する。
+# プロジェクト側で同設定を指定する場合も rust をリストに含めること。
 [settings]
 idiomatic_version_file_enable_tools = ["rust"]

@@ -12,3 +12,5 @@
 | 手置き（`~/.local/bin`） | ax・deja・pi・dws・ryzenadj | 自作・専用の物 |
 | gh の拡張 | actions-lock・poi・secure・workflow-stats | `gh extension install` |
 | apt | gh、マシンごとの物（docker・tailscale・カーネルなど） | gh は apt の自動更新に任せる |
+
+Rust のプロジェクト別バージョン指定には `rust-toolchain.toml` を使う。mise はこのファイルの `channel`・`profile`・`components`・`targets` を読み取る。Rust Analyzer を使うツールチェーンには `components = ["rust-analyzer", "rust-src"]` も指定する。プロジェクトの `mise.toml` で `idiomatic_version_file_enable_tools` を設定する場合は、グローバル設定を置き換えるため `rust` をリストに含める。rustup が読む拡張子なしの `rust-toolchain` はmiseの対象外なので、mise環境では `rust-toolchain.toml` に移行する。
