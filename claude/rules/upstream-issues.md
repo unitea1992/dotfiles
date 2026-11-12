@@ -9,4 +9,4 @@ Orca・DSH・Vite など、他人のリポジトリへ不具合や要望を出�
 5. **出す**：オーナーのアカウントで出す（`GH_TOKEN=$(gh auth token -u unitea1992) gh issue create --repo <相手> ...`）。
 6. **記録する**：出した URL を、関係する Issue（alinavigator なら該当の Issue）に1行で残す。回り道を入れたなら、直ったら消す旨も書く。
 
-出した Issue のその後の動きは、毎朝 8:00 の Orca の自動化が拾って、返事の下書きを Orca のチャットに残す。自動化は名前ではなく ID `eff1e214-b002-449a-add2-d8dec9df78b7` で指す（名前はオーナーが変えることがある。`orca automations list --json` で引く）。確認と指示は home-lab の `coordinator/upstream-watch/`。
+出した Issue のその後の動きは、毎朝 8:00 の Orca の自動化が拾って、返事の下書きを Orca のチャットに残す。自動化は名前ではなく ID `d2a51452-4fe9-4ba9-80d4-627d1127c6dc` で指す（名前はオーナーが変えることがある。`orca automations list --json` で引く）。確認と指示は home-lab の `coordinator/upstream-watch/`。
