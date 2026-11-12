@@ -6,7 +6,7 @@ go = "1.27.4"
 # mise は既存の rustup / Cargo home を共有する。Rust のCLIやクロスターゲットは維持される。
 rust = { version = "stable", components = ["rust-analyzer", "rust-src"] }
 # alinavigator の packageManager と同じ。常駐の仕組みが mise の shims から使う。
-pnpm = "11.25.0"
+pnpm = "11.28.11"
 # pi-extensions の依存と検査（bun install・bun run check）。版は pi-extensions の CI と同じ。
 bun = "1.4.4"
 
