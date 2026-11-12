@@ -5,11 +5,6 @@
 
 export PATH="$HOME/.local/bin:$PATH"
 
-# 端末の履歴
-# shellcheck source=/dev/null
-[ -r "$HOME/.atuin/bin/env" ] && . "$HOME/.atuin/bin/env"
-command -v atuin >/dev/null && eval "$(atuin init bash)"
-
 # 言語のバージョン（mise）。手で開くシェルでは既定で効かせる。止めるときは MISE_ACTIVATE=0。
 # 常駐の仕組み（systemd）はシェルを通らないので、ここでは変わらない。
 if [ "${MISE_ACTIVATE:-1}" = 1 ] && command -v mise >/dev/null; then
@@ -18,6 +13,11 @@ fi
 
 # プロンプト。starship は mise で入れるので、mise を有効にした後に読む。
 command -v starship >/dev/null && eval "$(starship init bash)"
+
+# 端末の履歴。atuin も mise で入れるので、mise を有効にした後に読む（公式の入れ方の ~/.atuin/bin があればそれも通す）。
+# shellcheck source=/dev/null
+[ -r "$HOME/.atuin/bin/env" ] && . "$HOME/.atuin/bin/env"
+command -v atuin >/dev/null && eval "$(atuin init bash)"
 
 # Rust（rustup）
 # shellcheck source=/dev/null
