@@ -5,9 +5,6 @@
 
 export PATH="$HOME/.local/bin:$PATH"
 
-# プロンプト
-command -v starship >/dev/null && eval "$(starship init bash)"
-
 # 端末の履歴
 # shellcheck source=/dev/null
 [ -r "$HOME/.atuin/bin/env" ] && . "$HOME/.atuin/bin/env"
@@ -18,6 +15,9 @@ command -v atuin >/dev/null && eval "$(atuin init bash)"
 if [ "${MISE_ACTIVATE:-1}" = 1 ] && command -v mise >/dev/null; then
   eval "$(mise activate bash)"
 fi
+
+# プロンプト。starship は mise で入れるので、mise を有効にした後に読む。
+command -v starship >/dev/null && eval "$(starship init bash)"
 
 # Rust（rustup）
 # shellcheck source=/dev/null
