@@ -20,6 +20,9 @@ link git/hooks/pre-commit   "$HOME/.config/git/hooks/pre-commit"
 link git/ignore             "$HOME/.config/git/ignore"
 link mise/config.toml       "$HOME/.config/mise/config.toml"
 link claude/rules/upstream-issues.md "$HOME/.claude/rules/upstream-issues.md"
+# リポジトリが決めた版の CLI を、pnpm exec を付けずに呼ぶ入口（bin/project-bin）。
+link bin/project-bin "$HOME/.local/bin/cf"
+link bin/project-bin "$HOME/.local/bin/wrangler"
 
 cat <<MSG
 残りは手で（マシンごとのファイルのため）：

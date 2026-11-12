@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# 今いる場所から上へたどり、node_modules/.bin にある同じ名前のコマンドを実行する。
+# リポジトリが package.json で決めた版をそのまま使うための入口（全体へ入れた別の版は使わない）。
+# ~/.local/bin/cf・~/.local/bin/wrangler からリンクして使う。`cf …` は、その場所の `pnpm exec cf …` と同じ物が動く。
+set -euo pipefail
+name="$(basename -- "$0")"
+dir="$PWD"
+while :; do
+  if [ -x "$dir/node_modules/.bin/$name" ]; then exec "$dir/node_modules/.bin/$name" "$@"; fi
+  [ "$dir" = / ] && break
+  dir="$(dirname -- "$dir")"
+done
+echo "$name: ここから上の node_modules/.bin に見つかりません（依存を入れたリポジトリの中で実行してください）" >&2
+exit 127
