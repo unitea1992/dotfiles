@@ -11,6 +11,8 @@ if [[ $- == *i* || -n ${SSH_CONNECTION:-} ]] && locale -a 2>/dev/null | grep -qi
   export LANG=en_US.UTF-8
   export LANGUAGE=en_US:en
   export LC_MESSAGES=en_US.UTF-8
+  # LC_ALL が引き継がれていると、上の3つより勝つ。外して LANG に任せる。
+  unset LC_ALL
 fi
 
 # 言語のバージョン（mise）。手で開くシェルでは既定で効かせる。止めるときは MISE_ACTIVATE=0。
