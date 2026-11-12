@@ -2,7 +2,7 @@
 [tools]
 node = "24.22.0"
 python = "3.14.10"
-go = "1.27.3"
+go = "1.27.4"
 # mise は既存の rustup / Cargo home を共有する。Rust のCLIやクロスターゲットは維持される。
 rust = { version = "stable", components = ["rust-analyzer", "rust-src"] }
 # alinavigator の packageManager と同じ。常駐の仕組みが mise の shims から使う。
@@ -19,17 +19,17 @@ oxipng = "10.2.1"
 taplo = "0.10.0"
 shfmt = "3.14.1"
 actionlint = "1.7.12"
-topgrade = "17.15.0"
+topgrade = "17.16.0"
 uv = "0.13.7"
 ruff = "0.17.4"
-ty = "0.0.99"
+ty = "0.0.100"
 yt-dlp = "2026.10.26"
-rumdl = "0.3.2"
+rumdl = "0.3.3"
 restic = "0.19.1"
-cargo-binstall = "1.26.2"
+cargo-binstall = "1.27.0"
 tauri-cli = "2.12.4"
-ast-grep = "0.51.1"
-gup = "1.10.3"
+ast-grep = "0.51.2"
+gup = "1.10.4"
 # コミット前のフック（git/hooks/pre-commit）が使う。v2 系の試験版を含めて、v2 系の最新を追う。
 betterleaks = { version = "2", prerelease = true }
 
