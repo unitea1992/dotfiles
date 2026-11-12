@@ -6,12 +6,12 @@
 
 | 入れ方 | ツール | メモ |
 | --- | --- | --- |
-| mise | node・python・go・pnpm・bun・uv・Rust（stable、rust-analyzer・rust-src）、starship・atuin・eza・bat・fd・yq・just・hyperfine・oha・onefetch・oxipng・taplo・shfmt・actionlint・topgrade・ruff・ty・yt-dlp・rumdl・restic・cargo-binstall・tauri-cli・ast-grep・gup・betterleaks | Rust は既存の rustup / Cargo home を共有し、プロジェクトの `rust-toolchain.toml` も尊重する。betterleaks は `version = "2"`・`prerelease = true` で、v2 系の最新（試験版を含む）を追う |
+| mise | node・python・go・pnpm・bun・uv・Rust（stable、rust-analyzer・rust-src）、starship・atuin・eza・bat・fd・yq・just・hyperfine・oha・onefetch・oxipng・taplo・shfmt・actionlint・topgrade・ruff・ty・yt-dlp・rumdl・restic・cargo-binstall・tauri-cli・ast-grep・gup・betterleaks・ax（`github:yusukebe/ax`） | Rust は既存の rustup / Cargo home を共有し、プロジェクトの `rust-toolchain.toml` も尊重する。betterleaks は `version = "2"`・`prerelease = true` で、v2 系の最新（試験版を含む）を追う |
 | mise（`pipx:`、中身は uv） | trafilatura・fonttools・androguard・websockify・gallery-dl・git-filter-repo | |
 | cargo | cargo-nextest・cargo-update | mise の一覧に無い |
 | go install | httpx・katana・gau・webanalyze | mise の一覧に無い。更新は gup |
 | npm（node の全体） | DSH・dsh-TUI・clasp・Playwright の CLI・言語サーバーなど | node を mise に移す3段目で入れ直す。全体のパッケージは node の版ごとの置き場に入るので、`mise/config.toml` の node を上げたら、`mise install` のあとに `npm ls -g --depth=0`（前の版の側）で見た物を `npm install -g` で入れ直す |
-| 手置き（`~/.local/bin`） | ax・deja・pi・dws・ryzenadj | 自作・専用の物 |
+| 手置き（`~/.local/bin`） | deja・pi・dws・ryzenadj | 自作・専用の物 |
 | gh の拡張 | actions-lock・poi・secure・workflow-stats | `gh extension install` |
 | apt | gh、マシンごとの物（docker・tailscale・カーネルなど） | gh は apt の自動更新に任せる |
 
