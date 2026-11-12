@@ -40,7 +40,7 @@ ast-grep = "0.51.2"
 gup = "1.10.4"
 # コミット前のフック（git/hooks/pre-commit）が使う。v2 系の試験版を含めて、v2 系の最新を追う。
 betterleaks = { version = "2", prerelease = true }
-# URL の取得と HTML からの抜き出し（スキル ax が使う。配布元の GitHub Releases のバイナリ。前は ~/.local/bin に手置き）。
+# URL の取得と HTML からの抜き出し（スキル ax が使う。配布元の GitHub Releases のバイナリ）。
 "github:yusukebe/ax" = "0.1.25"
 
 # Python の CLI。mise の pipx の入れ方は、uv があれば uv で入れる。
