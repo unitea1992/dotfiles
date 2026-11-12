@@ -5,6 +5,14 @@
 
 export PATH="$HOME/.local/bin:$PATH"
 
+# 表示の言語。手で開くシェルと SSH では英語にする（OS を日本語で入れたマシンでも、コマンドの出力とエラーを英語でそろえる）。
+# en_US.UTF-8 のロケールが無いマシンでは何もしない（無いロケールを指すと、道具が警告を出す）。
+if [[ $- == *i* || -n ${SSH_CONNECTION:-} ]] && locale -a 2>/dev/null | grep -qi '^en_US\.utf-\?8$'; then
+  export LANG=en_US.UTF-8
+  export LANGUAGE=en_US:en
+  export LC_MESSAGES=en_US.UTF-8
+fi
+
 # 言語のバージョン（mise）。手で開くシェルでは既定で効かせる。止めるときは MISE_ACTIVATE=0。
 # 常駐の仕組み（systemd）はシェルを通らないので、ここでは変わらない。
 if [ "${MISE_ACTIVATE:-1}" = 1 ] && command -v mise >/dev/null; then
