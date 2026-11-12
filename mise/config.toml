@@ -8,7 +8,7 @@ rust = { version = "stable", components = ["rust-analyzer", "rust-src"] }
 # alinavigator の packageManager と同じ。常駐の仕組みが mise の shims から使う。
 pnpm = "11.25.0"
 # pi-extensions の依存と検査（bun install・bun run check）。版は pi-extensions の CI と同じ。
-bun = "1.4.3"
+bun = "1.4.4"
 
 # 配布元の公式のバイナリを mise で入れるツール（2026-11-06、元は cargo・go install・手置き）。
 just = "1.59.0"
