@@ -24,6 +24,23 @@ link claude/rules/upstream-issues.md "$HOME/.claude/rules/upstream-issues.md"
 link bin/project-bin "$HOME/.local/bin/cf"
 link bin/project-bin "$HOME/.local/bin/wrangler"
 
+# ホームの下の決まったフォルダ（Desktop・Documents など）を英語の名前にする。OS を日本語で入れると
+# 「デスクトップ」などになり、パスに日本語が混ざる。今の設定に英数字以外の名前があるときだけ動かす
+# （英語のマシンや、置き場を手で変えたマシンの設定は触らない）。
+xdg_config="${XDG_CONFIG_HOME:-$HOME/.config}"
+if command -v xdg-user-dirs-update >/dev/null && [ -f "$xdg_config/user-dirs.dirs" ] \
+   && grep -v '^#' "$xdg_config/user-dirs.dirs" | LC_ALL=C grep -q '[^ -~]'; then
+  if [ "$dry" = 1 ]; then
+    echo "する  フォルダの名前を英語にする（LANG=C xdg-user-dirs-update --force）"
+  else
+    LANG=C LC_ALL=C xdg-user-dirs-update --force
+    echo C > "$xdg_config/user-dirs.locale"
+    echo "フォルダの名前を英語にした。前の名前のフォルダは消していない（空なら手で消す）"
+  fi
+else
+  echo "済み  フォルダの名前（英数字だけ、または設定なし）"
+fi
+
 cat <<MSG
 残りは手で（マシンごとのファイルのため）：
   ~/.bashrc の最後に   . $here/bash/common.sh

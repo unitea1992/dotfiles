@@ -18,3 +18,5 @@
 Rust のプロジェクト別バージョン指定には `rust-toolchain.toml` を使う。mise はこのファイルの `channel`・`profile`・`components`・`targets` を読み取る。Rust Analyzer を使うツールチェーンには `components = ["rust-analyzer", "rust-src"]` も指定する。プロジェクトの `mise.toml` で `idiomatic_version_file_enable_tools` を設定する場合は、グローバル設定を置き換えるため `rust` をリストに含める。rustup が読む拡張子なしの `rust-toolchain` はmiseの対象外なので、mise環境では `rust-toolchain.toml` に移行する。
 
 `cf` と `wrangler` は全体へ入れない。リポジトリが `package.json` で版を決めているので、`~/.local/bin/cf`・`wrangler`（`bin/project-bin` へのリンク）が、今いる場所から上の `node_modules/.bin` の同じ名前を実行する。`pnpm exec` を付けたときと同じ物が動く。
+
+表示の言語は英語にそろえる：`bash/common.sh` が、手で開くシェルと SSH で `LANG=en_US.UTF-8` を入れる。`install` は、ホームの下の決まったフォルダ（Desktop など）を英語の名前にする。システムの既定の言語（`/etc/default/locale`）は root の設定なので、マシンごとの初期設定の台本で入れる。
