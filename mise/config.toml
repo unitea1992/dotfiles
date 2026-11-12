@@ -1,6 +1,6 @@
 # 開発機の言語のバージョン。~/.config/mise/config.toml へリンクして使う。
 [tools]
-node = "24.22.0"
+node = "24.22.3"
 python = "3.14.10"
 go = "1.27.4"
 # mise は既存の rustup / Cargo home を共有する。Rust のCLIやクロスターゲットは維持される。
