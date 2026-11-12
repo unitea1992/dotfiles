@@ -1,6 +1,8 @@
 # 入れている外のスキル
 
-中身はここにコピーしない（作った人の配布物のため）。新しいマシンでは、それぞれの配布元の手順で `~/.agents/skills/` に入れる。
+外部スキルは原則 `npx skills` で導入・管理する。グローバルは `~/.agents/skills/`、プロジェクト単位では各リポジトリの `.agents/skills/` を正本とし、各ハーネスには必要に応じてリンクする。`npx skills list` と `npx skills list --global` で確認する。配布物の中身をdotfilesへコピーしない。
+
+AliNavigatorには `skills-lock.json` の記録だけでなくローカル作成スキルもあるため、導入時は `.agents/skills/` の実体・リンク先・各ハーネスの認識を合わせて確認する。
 
 | スキル | 配布元 | メモ |
 | --- | --- | --- |

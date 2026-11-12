@@ -2,6 +2,8 @@
 
 言語とツールは、できるだけ mise（`mise/config.toml`）にまとめる。新しいマシンでは `mise install` の1回でそろう。それ以外は、それぞれの公式の入れ方のまま、ここに一覧だけ書く。
 
+`topgrade` 本体はmiseの管理対象だが、更新対象の設定（`~/.config/topgrade.toml`、`~/.config/topgrade.d/`）はmiseでは配布されない。新しいマシンでは必要な更新レシピを選別し、旧機では移設済みツールの更新レシピを外す。
+
 | 入れ方 | ツール | メモ |
 | --- | --- | --- |
 | mise | node・python・go・pnpm・uv・Rust（stable、rust-analyzer・rust-src）、just・hyperfine・oha・onefetch・oxipng・taplo・shfmt・actionlint・topgrade・ruff・ty・yt-dlp・rumdl・restic・cargo-binstall・tauri-cli・ast-grep・gup・betterleaks | Rust は既存の rustup / Cargo home を共有し、プロジェクトの `rust-toolchain.toml` も尊重する。betterleaks は `version = "2"`・`prerelease = true` で、v2 系の最新（試験版を含む）を追う |
