@@ -23,6 +23,7 @@ link claude/rules/upstream-issues.md "$HOME/.claude/rules/upstream-issues.md"
 # リポジトリが決めた版の CLI を、pnpm exec を付けずに呼ぶ入口（bin/project-bin）。
 link bin/project-bin "$HOME/.local/bin/cf"
 link bin/project-bin "$HOME/.local/bin/wrangler"
+link bin/codex-update-shim "$HOME/.local/libexec/orca-codex-update-shim"
 
 # ホームの下の決まったフォルダ（Desktop・Documents など）を英語の名前にする。OS を日本語で入れると
 # 「デスクトップ」などになり、パスに日本語が混ざる。今の設定に英数字以外の名前があるときだけ動かす
@@ -44,5 +45,7 @@ fi
 cat <<MSG
 残りは手で（マシンごとのファイルのため）：
   ~/.bashrc の最後に   . $here/bash/common.sh
+  ~/.profile の最後に   . "$HOME/projects/dotfiles/bash/login.sh"
+  ~/.zshenv の最後に   . "$HOME/projects/dotfiles/bash/login.sh" （zsh を使う場合）
   ~/.gitconfig に      [include] path = $here/git/config   （名前とメールは ~/.gitconfig に残す）
 MSG

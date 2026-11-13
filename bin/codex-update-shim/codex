@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# Keep Orca's per-account CODEX_HOME for normal Codex commands.
+# Drop it only for the standalone installer update action, which detects the
+# installation under ~/.codex. Orca's shell function prepends --no-daemon and
+# -c options, so skip those global options while recognizing `codex update`.
+set -u
+real_codex="${HOME}/.local/bin/codex"
+if [[ ! -x "$real_codex" ]]; then
+  printf 'codex updater shim: executable not found: %s\n' "$real_codex" >&2
+  exit 127
+fi
+args=("$@")
+i=0
+while (( i < ${#args[@]} )); do
+  case "${args[i]}" in
+    --no-daemon)
+      ((i += 1))
+      ;;
+    -c|--config)
+      ((i += 2))
+      ;;
+    update)
+      if (( i == ${#args[@]} - 1 )); then
+        exec env -u CODEX_HOME "$real_codex" update
+      fi
+      break
+      ;;
+    *)
+      break
+      ;;
+  esac
+done
+exec "$real_codex" "$@"

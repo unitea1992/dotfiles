@@ -5,6 +5,12 @@
 
 export PATH="$HOME/.local/bin:$PATH"
 
+# Keep the Codex update shim ahead of the standalone binary in interactive shells.
+if [ -x "$HOME/.local/bin/codex" ]; then
+  PATH="$HOME/.local/libexec/orca-codex-update-shim:$PATH"
+  export PATH
+fi
+
 # 表示の言語。手で開くシェルと SSH では英語にする（OS を日本語で入れたマシンでも、コマンドの出力とエラーを英語でそろえる）。
 # en_US.UTF-8 のロケールが無いマシンでは何もしない（無いロケールを指すと、道具が警告を出す）。
 if [[ $- == *i* || -n ${SSH_CONNECTION:-} ]] && locale -a 2>/dev/null | grep -qi '^en_US\.utf-\?8$'; then
