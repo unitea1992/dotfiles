@@ -5,15 +5,15 @@ python = "3.14.10"
 go = "1.27.4"
 # mise は既存の rustup / Cargo home を共有する。Rust のCLIやクロスターゲットは維持される。
 rust = { version = "stable", components = ["rust-analyzer", "rust-src"] }
-# alinavigator の packageManager と同じ。常駐の仕組みが mise の shims から使う。
+# プロジェクトの packageManager と同じ版にそろえる。常駐の仕組みが mise の shims から使う。
 pnpm = "11.28.11"
 # pi-extensions の依存と検査（bun install・bun run check）。版は pi-extensions の CI と同じ。
 bun = "1.4.4"
 
-# 配布元の公式のバイナリを mise で入れるツール（2026-11-06、元は cargo・go install・手置き）。
+# 配布元の公式のバイナリを mise で入れるツール。
 # シェルのプロンプト（bash/common.sh が starship init を呼ぶ。設定は starship/starship.toml）。
 starship = "1.27.0"
-# 手で開くシェルで使う道具（前は手置きや apt で、新しいマシンに入っていなかった）。
+# 手で開くシェルで使う道具。
 atuin = "18.24.6"
 eza = "0.23.5"
 bat = "0.26.1"
