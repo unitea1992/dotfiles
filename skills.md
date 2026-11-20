@@ -12,5 +12,4 @@
 | security-audit | https://github.com/cloudflare/security-audit-skill | セキュリティの見直し |
 | ax | https://github.com/yusukebe/ax | URL の取得・HTML からの抜き出し（本体の `ax` CLI は `mise/config.toml` で入れる） |
 | xserver | https://developer.xserver.ne.jp/ai/skills/xserver/SKILL.md | エックスサーバーの操作（公式の Claude 向けコネクタもある：https://www.xserver.ne.jp/news_detail.php?view_id=19815） |
-| orca-cli・orchestration・orca-computer-use（computer-use はその別名） | Orca（アプリが入れる） | Orca を入れると付いてくる |
 | deja-history・deja-search | deja（`deja install` が入れる） | 過去の作業の検索 |

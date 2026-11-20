@@ -22,7 +22,7 @@ git clone https://github.com/unitea1992/dotfiles ~/projects/dotfiles
 ~/projects/dotfiles/install
 ```
 
-`install` はリンクを張るだけ。前にあった物は `<名前>.before-dotfiles` に残す。`~/.bashrc`・`~/.profile`・`~/.gitconfig` はマシンごとのファイルなので、最後に表示される行を手で足す。Bash では `.profile` の末尾から `bash/login.sh` を読み、zsh を使う場合は `.zshenv` から同じファイルを読む。Orca の login shell は `.profile` が `~/.local/bin` を PATH の先頭へ戻すため、この行は PATH の設定後に置く。
+`install` はリンクを張るだけ。前にあった物は `<名前>.before-dotfiles` に残す。`~/.bashrc`・`~/.profile`・`~/.gitconfig` はマシンごとのファイルなので、最後に表示される行を手で足す。Bash では `.profile` の末尾から `bash/login.sh` を読み、zsh を使う場合は `.zshenv` から同じファイルを読む。
 
 mise はリンクを張ったあと `mise install` で各バージョンを入れる。手で開くシェルでは既定で効く。止めるときは `MISE_ACTIVATE=0`（`bash/common.sh`）。常駐の仕組み（systemd）には効かない。
 
