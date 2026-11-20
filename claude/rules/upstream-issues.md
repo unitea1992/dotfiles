@@ -1,6 +1,6 @@
 # 外のリポジトリへの Issue・PR の出し方
 
-Orca・DSH・Vite など、他人のリポジトリへ不具合や要望を出すときの手順。どのプロジェクトで作業していても当てる。
+DSH・Vite など、他人のリポジトリへ不具合や要望を出すときの手順。どのプロジェクトで作業していても当てる。
 
 1. **探す**：同じ要望の Issue・PR がもう無いかを、相手のリポジトリで `gh search issues` と `gh search prs` を使い、何語かで探す。あれば新しく出さず、その Issue に足す情報があるかをオーナーに相談する。
 2. **相手の決まりを読む**：`.github/ISSUE_TEMPLATE/`（用紙と `config.yml`）・`CONTRIBUTING.md`・`SECURITY.md` を読み、題名の付け方、項目、言語、ラベルに合わせる。用紙しか受け付けないリポジトリでは、用紙の項目の見出しをそのまま本文に並べる。シークレットに関わる不具合は公開の Issue にせず、`SECURITY.md` の道を使う。
@@ -9,4 +9,4 @@ Orca・DSH・Vite など、他人のリポジトリへ不具合や要望を出�
 5. **出す**：オーナーのアカウントで出す（`GH_TOKEN=$(gh auth token -u unitea1992) gh issue create --repo <相手> ...`）。
 6. **記録する**：出した URL を、関係するプロジェクトの Issue に1行で残す。回り道を入れたなら、直ったら消す旨も書く。
 
-出した Issue のその後の動きは、毎朝 8:00 の Orca の自動化が拾って、返事の下書きを Orca のチャットに残す。自動化は名前ではなく ID `d2a51452-4fe9-4ba9-80d4-627d1127c6dc` で指す（名前はオーナーが変えることがある。`orca automations list --json` で引く）。確認と指示は home-lab の `coordinator/upstream-watch/`。
+出した Issue のその後の動きは、毎朝 8:00 の t3 のスケジュールタスク（「日次：外部宛のIssueをチェック」、home-lab のプロジェクト）が拾って、返事の下書きを t3 のスレッドに残す。タスクは名前ではなく ID `scheduled-task:cd832fee-900d-4f31-818c-c3da82d8ed76` で指す（名前はオーナーが変えることがある）。確認と指示は home-lab の `coordinator/upstream-watch/`。
