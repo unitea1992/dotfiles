@@ -1,6 +1,2 @@
 # Source after other PATH edits in ~/.profile, or from ~/.zshenv.
-# Orca's Codex update shim must precede ~/.local/bin/codex.
-if [ -x "$HOME/.local/bin/codex" ]; then
-  PATH="$HOME/.local/libexec/orca-codex-update-shim:$PATH"
-  export PATH
-fi
+# login shell だけで要る設定の置き場。今は何もしない（2026-11-20 に Orca 用の Codex update shim を外した）。
