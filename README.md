@@ -10,6 +10,7 @@
 | `git/hooks/pre-commit` | 全リポジトリでコミットの前に [betterleaks](https://github.com/betterleaks/betterleaks) でシークレットの混入をチェックする | `~/.config/git/hooks/pre-commit` |
 | `starship/starship.toml` | プロンプトの見た目 | `~/.config/starship.toml` |
 | `mise/config.toml` | 言語のバージョン（node・Python・Go・Rust）と Rust の必須コンポーネント | `~/.config/mise/config.toml` |
+| `agents/AGENTS.md` | エージェント共通の指示（進め方）。Claude Code・Codex・pi で同じ文面を使う | `~/.claude/CLAUDE.md`・`~/.codex/AGENTS.md`・`~/.pi/agent/AGENTS.md` |
 | `claude/rules/upstream-issues.md` | Claude Code に渡す決まり：外のリポジトリへの Issue・PR の出し方 | `~/.claude/rules/` に置く |
 | `skills.md` | 入れている外のスキルと配布元（中身はコピーしない） | — |
 | `tools.md` | ツールの入れ方の一覧（mise・uv・cargo・go・npm・手置き） | — |
