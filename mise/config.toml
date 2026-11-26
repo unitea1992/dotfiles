@@ -1,12 +1,12 @@
 # 開発機の言語のバージョン。~/.config/mise/config.toml へリンクして使う。
 [tools]
-node = "24.22.3"
-python = "3.14.10"
+node = "26.13.1"
+python = "3.15.2"
 go = "1.27.4"
 # mise は既存の rustup / Cargo home を共有する。Rust のCLIやクロスターゲットは維持される。
 rust = { version = "stable", components = ["rust-analyzer", "rust-src"] }
 # プロジェクトの packageManager と同じ版にそろえる。常駐の仕組みが mise の shims から使う。
-pnpm = "11.28.11"
+pnpm = "12.23.0"
 # pi-extensions の依存と検査（bun install・bun run check）。版は pi-extensions の CI と同じ。
 bun = "1.4.4"
 
@@ -14,41 +14,41 @@ bun = "1.4.4"
 # シェルのプロンプト（bash/common.sh が starship init を呼ぶ。設定は starship/starship.toml）。
 starship = "1.27.0"
 # 手で開くシェルで使う道具。
-atuin = "18.24.6"
+atuin = "18.25.1"
 eza = "0.23.5"
 bat = "0.26.1"
 fd = "10.5.2"
 yq = "4.54.3"
 just = "1.59.0"
 hyperfine = "2.0.0"
-oha = "1.16.0"
-onefetch = "3.2.0"
+oha = "1.17.0"
+onefetch = "3.3.0"
 oxipng = "10.2.1"
 taplo = "0.10.0"
 shfmt = "3.14.1"
 actionlint = "1.7.12"
-topgrade = "17.16.0"
-uv = "0.13.7"
-ruff = "0.17.4"
-ty = "0.0.100"
-yt-dlp = "2026.10.26"
-rumdl = "0.3.3"
+topgrade = "17.17.0"
+uv = "0.13.10"
+ruff = "0.17.6"
+ty = "0.0.109"
+yt-dlp = "2026.11.23"
+rumdl = "0.3.6"
 restic = "0.19.1"
-cargo-binstall = "1.27.0"
-tauri-cli = "2.12.4"
-ast-grep = "0.51.2"
-gup = "1.10.4"
+cargo-binstall = "1.28.0"
+tauri-cli = "2.12.6"
+ast-grep = "0.51.3"
+gup = "1.10.5"
 # コミット前のフック（git/hooks/pre-commit）が使う。v2 系の試験版を含めて、v2 系の最新を追う。
 betterleaks = { version = "2", prerelease = true }
 # URL の取得と HTML からの抜き出し（スキル ax が使う。配布元の GitHub Releases のバイナリ）。
 "github:yusukebe/ax" = "0.1.25"
 
 # Python の CLI。mise の pipx の入れ方は、uv があれば uv で入れる。
-"pipx:trafilatura" = "2.3.1"
+"pipx:trafilatura" = "2.4.0"
 "pipx:fonttools" = "4.68.0"
 "pipx:androguard" = "4.1.4"
 "pipx:websockify" = "0.13.0"
-"pipx:gallery-dl" = "1.32.19"
+"pipx:gallery-dl" = "1.32.21"
 "pipx:git-filter-repo" = "2.47.0"
 
 # go install の置き場（GOBIN）は ~/go/bin にそろえる。mise の Go は既定で GOBIN を
