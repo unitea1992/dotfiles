@@ -51,6 +51,12 @@ betterleaks = { version = "2", prerelease = true }
 "pipx:gallery-dl" = "1.32.19"
 "pipx:git-filter-repo" = "2.47.0"
 
+# go install の置き場（GOBIN）は ~/go/bin にそろえる。mise の Go は既定で GOBIN を
+# ツールチェイン自身の bin へ向けるため、そのままだと gup（と topgrade の gup の段）が
+# ~/go/bin のバイナリを見つけられず、更新が回らない。
+[env]
+GOBIN = "{{ env.HOME }}/go/bin"
+
 # プロジェクトに rust-toolchain.toml があればその指定を尊重する。
 # プロジェクト側で同設定を指定する場合も rust をリストに含めること。
 [settings]
